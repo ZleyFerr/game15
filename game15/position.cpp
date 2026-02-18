@@ -1,13 +1,18 @@
 #include "position.h"
 
-void Position::set_position(uint8_t x, uint8_t y)
+void Position::set_position(unsigned short int x, unsigned short int y)
 {
 	pos_now.first = x;
 	pos_now.second = y;
 }
 
-
-std::pair <uint8_t, uint8_t> Position::get_position()
+std::pair <unsigned short int, unsigned short int> Position::get_position() const
 {
 	return pos_now;
+}
+
+Position::Position(unsigned short int x, unsigned short int y)
+{
+	this->pos_now.first = x;
+	this->pos_now.second = y;
 }

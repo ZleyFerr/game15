@@ -5,14 +5,9 @@ void FieldCell::move()
 
 }
 
-uint8_t FieldCell::get_value()
+unsigned short int FieldCell::get_value()
 {
 	return value;
-}
-
-std::pair<uint8_t, uint8_t> FieldCell::get_position()
-{
-	return position;
 }
 
 bool FieldCell::get_isCellEmpty()

@@ -1,12 +1,15 @@
 #pragma once
 #include <iostream>
 #include <windows.h>
+#include <utility>
 
 class Position
 {
 protected:
-	std::pair <uint8_t, uint8_t> pos_now;
+	std::pair <unsigned short int, unsigned short int> pos_now = { 0,1 };
 public:
-	void set_position(uint8_t x, uint8_t y);
-	std::pair <uint8_t, uint8_t> get_position();
+	void set_position(unsigned short int x, unsigned short int y);
+	std::pair <unsigned short int, unsigned short int> get_position() const;
+	Position(unsigned short int x, unsigned short int y);
+	Position() {};
 };
