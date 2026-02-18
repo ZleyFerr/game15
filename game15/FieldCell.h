@@ -1,18 +1,23 @@
 #pragma once
-#include <iostream>
+#include "position.h"
 
 class FieldCell
 {
 protected:
 	uint8_t value;
-	uint8_t x_pos;
-	uint8_t y_pos;
+	std::pair<uint8_t, uint8_t> position;
 	bool isCellEmpty;
-	bool isUpAviable;
-	bool isDownAviable;
-	bool isLeftAviable;
-	bool isRightAviable;
+	bool isUpAvaible;
+	bool isDownAvaible;
+	bool isLeftAvaible;
+	bool isRightAvaible;
 public:
-
-
+	void move();
+	uint8_t get_value();
+	std::pair<uint8_t, uint8_t> get_position();
+	bool get_isCellEmpty();
+	bool get_isUpAvaible();
+	bool get_isDownAvaible();
+	bool get_isLeftAvaible();
+	bool get_isRightAvaible();
 };
