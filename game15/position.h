@@ -6,10 +6,13 @@
 class Position
 {
 protected:
-	std::pair <unsigned short int, unsigned short int> pos_now = { 0,1 };
+	//std::pair <unsigned short int, unsigned short int> pos_now = { 0,0 };
+	unsigned short int x = 0;
+	unsigned short int y = 0;
 public:
 	void set_position(unsigned short int x, unsigned short int y);
-	std::pair <unsigned short int, unsigned short int> get_position() const;
+	unsigned short int get_x() const;
+	unsigned short int get_y() const;
 	Position(unsigned short int x, unsigned short int y);
 	Position() {};
 };

@@ -2,17 +2,22 @@
 
 void Position::set_position(unsigned short int x, unsigned short int y)
 {
-	pos_now.first = x;
-	pos_now.second = y;
+	this->x = x;
+	this->y = y;
 }
 
-std::pair <unsigned short int, unsigned short int> Position::get_position() const
+unsigned short int Position::get_x() const
 {
-	return pos_now;
+	return x;
+}
+
+unsigned short int Position::get_y() const
+{
+	return y;
 }
 
 Position::Position(unsigned short int x, unsigned short int y)
 {
-	this->pos_now.first = x;
-	this->pos_now.second = y;
+	this->x = x;
+	this->x = y;
 }
