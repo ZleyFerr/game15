@@ -125,12 +125,14 @@
   <ItemGroup>
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FieldCell.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="position.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Field.h" />
     <ClInclude Include="FieldCell.h" />
+    <ClInclude Include="game.h" />
     <ClInclude Include="position.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

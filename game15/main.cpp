@@ -1,14 +1,6 @@
-#include "Field.h"
+#include "game.h"
 
 int main()
 {
-	const int size = 4;
-	createField(size);
-	while (true)
-	{
-		printField(size);
-		updateFieldCellsStatuses(size);
-		system("cls");
-	}
-	
+	playGame();
 }

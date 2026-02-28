@@ -14,7 +14,6 @@ public:
 	FieldCell(unsigned short int value, bool isCellEmpty,	bool isUpAvaible, bool isDownAvaible, bool isLeftAvaible, bool isRightAvaible)
 		: value{ value },	isCellEmpty{ isCellEmpty }, isUpAvaible{ isUpAvaible }, isDownAvaible{ isDownAvaible },	isLeftAvaible{ isLeftAvaible }, isRightAvaible{ isRightAvaible } {};
 	FieldCell() {};
-	void move();
 	unsigned short int get_value() const;
 	bool get_isCellEmpty()const;
 	bool get_isUpAvaible()const;
@@ -27,6 +26,6 @@ public:
 	void set_isDownAvaible(bool status);
 	void set_isLeftAvaible(bool status);
 	void set_isRightAvaible(bool status);
-
+	void set_value(unsigned short int value);
 	void updateCellStatus(bool right, bool left, bool up, bool down, bool empty);
 };

@@ -1,10 +1,5 @@
 #include "FieldCell.h"
 
-void FieldCell::move()
-{
-
-}
-
 unsigned short int FieldCell::get_value() const
 {
 	return value;
@@ -58,6 +53,11 @@ void FieldCell::set_isLeftAvaible(bool status)
 void FieldCell::set_isRightAvaible(bool status)
 {
 	isRightAvaible = status;
+}
+
+void FieldCell::set_value(unsigned short int value)
+{
+	this->value = value;
 }
 
 void FieldCell::updateCellStatus(bool right, bool left, bool up, bool down, bool empty)
