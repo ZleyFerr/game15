@@ -60,4 +60,41 @@ void printField(int size)
 	}
 }
 
+void updateFieldCellsStatuses(int size)
+{
+	int sizeInSquare = size * size;
+
+	for (int i = 0; i < sizeInSquare; i++)
+	{
+		unsigned int cellX = gameField[i].get_x(), cellY = gameField[i].get_y();
+		int upperX = -1, downX = -1, leftY = -1, rightY = -1;
+
+		if (i != (sizeInSquare - 1)) // вправо
+		{
+			if (gameField[i + 1].get_value() == 0) 
+				gameField[i].set_isRightAvaible(1);
+		}
+
+		if (i != 0) // влево
+		{
+			if (gameField[i - 1].get_value() == 0)
+				gameField[i].set_isLeftAvaible(1);
+		}
+
+		if (gameField[i].get_x() > 1) //верх
+		{
+			if(gameField[i-size].get_x() == 0)
+				gameField[i].set_isUpAvaible(1);
+		}
+
+		if (gameField[i].get_x() < size) //вниз
+		{
+			if (gameField[i + size].get_x() == 0)
+				gameField[i].set_isDownAvaible(1);
+		}
+
+	}
+}
+
+
 

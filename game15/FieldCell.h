@@ -21,4 +21,12 @@ public:
 	bool get_isDownAvaible()const;
 	bool get_isLeftAvaible()const;
 	bool get_isRightAvaible()const;
+
+	void set_isCellEmpty(bool status);
+	void set_isUpAvaible(bool status);
+	void set_isDownAvaible(bool status);
+	void set_isLeftAvaible(bool status);
+	void set_isRightAvaible(bool status);
+
+	void updateCellStatus(bool right, bool left, bool up, bool down, bool empty);
 };

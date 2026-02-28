@@ -34,3 +34,37 @@ bool FieldCell::get_isRightAvaible() const
 {
 	return isRightAvaible;
 }
+
+void FieldCell::set_isCellEmpty(bool status)
+{
+	isCellEmpty = status;
+}
+
+void FieldCell::set_isUpAvaible(bool status)
+{
+	isUpAvaible = status;
+}
+
+void FieldCell::set_isDownAvaible(bool status)
+{
+	isDownAvaible = status;
+}
+
+void FieldCell::set_isLeftAvaible(bool status)
+{
+	isLeftAvaible = status;
+}
+
+void FieldCell::set_isRightAvaible(bool status)
+{
+	isRightAvaible = status;
+}
+
+void FieldCell::updateCellStatus(bool right, bool left, bool up, bool down, bool empty)
+{
+	isRightAvaible = right;
+	isLeftAvaible = left;
+	isUpAvaible = up;
+	isDownAvaible = down;
+	isCellEmpty = empty;
+}

@@ -4,5 +4,11 @@ int main()
 {
 	const int size = 4;
 	createField(size);
-	printField(size);
+	while (true)
+	{
+		printField(size);
+		updateFieldCellsStatuses(size);
+		system("cls");
+	}
+	
 }

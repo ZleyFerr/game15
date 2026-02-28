@@ -6,7 +6,6 @@
 class Position
 {
 protected:
-	//std::pair <unsigned short int, unsigned short int> pos_now = { 0,0 };
 	unsigned short int x = 0;
 	unsigned short int y = 0;
 public:
