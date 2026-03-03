@@ -78,13 +78,14 @@ void updateFieldCellsStatuses(int size)
 		}
 
 		int line = i / size;
-		if ((i != (sizeInSquare - 1))//доделать проверку...) // вправо
+		if (i != (sizeInSquare - 1)) // вправо
 		{
 			if (i+1 == zeroIndex) 
 				gameField[i].set_isRightAvaible(1);
 			else
 				gameField[i].set_isRightAvaible(0);
 		}
+
 
 		if (i != 0) // влево
 		{
@@ -164,12 +165,16 @@ void changeCells(int size)
 	}
 	else
 	{
-		int zeroIndex = getCellIndex(0), cellIndex = getCellIndex(cellToChange);
-
-		FieldCell tempCell = gameField[cellIndex];
-		gameField[cellIndex] = gameField[zeroIndex];
-		gameField[zeroIndex] = tempCell;
-		system("cls");
+		int zeroIndex = getCellIndex(0), cellIndex = getCellIndex(cellToChange);;
+		if ((gameField[cellIndex].get_x() == size) && (gameField[cellIndex].get_x() == 1))
+			std::cout << "Ход недоступен, смените клетку.\n";
+		else 
+		{
+			FieldCell tempCell = gameField[cellIndex];
+			gameField[cellIndex] = gameField[zeroIndex];
+			gameField[zeroIndex] = tempCell;
+			system("cls");
+		}
 	}
 }
 
