@@ -77,11 +77,16 @@ void updateFieldCellsStatuses(int size)
 			gameField[i].set_isCellEmpty(1);
 		}
 
-		int line = i / size;
 		if (i != (sizeInSquare - 1)) // вправо
 		{
-			if (i+1 == zeroIndex) 
+			if (i + 1 == zeroIndex)
+			{
 				gameField[i].set_isRightAvaible(1);
+				if (gameField[i].get_x() != gameField[i + 1].get_x())
+				{
+					gameField[i].set_isRightAvaible(0);
+				}
+			}
 			else
 				gameField[i].set_isRightAvaible(0);
 		}
@@ -90,7 +95,13 @@ void updateFieldCellsStatuses(int size)
 		if (i != 0) // влево
 		{
 			if (gameField[i - 1].get_isCellEmpty())
+			{
 				gameField[i].set_isLeftAvaible(1);
+				if (gameField[i].get_x() != gameField[i - 1].get_x())
+				{
+					gameField[i].set_isLeftAvaible(0);
+				}
+			}
 			else
 				gameField[i].set_isLeftAvaible(0);
 		}
@@ -140,14 +151,14 @@ bool checkWin()
 
 void changeCells(int size)
 {
-	updateFieldCellsStatuses(size);
 	int sizeInSquare = size * size;
+	updateFieldCellsStatuses(size);
 	setlocale(LC_ALL, "Ru");
 	int cellToChange = -1;
 
-	while (cellToChange < 1 || cellToChange > (sizeInSquare-1))
+	while (cellToChange < 1 || cellToChange >(sizeInSquare - 1))
 	{
-		std::cout << "¬ведите клетку [1-" << sizeInSquare-1 <<  "] которую хотите помен€ть местами с клеткой 0: ";
+		std::cout << "¬ведите клетку [1-" << sizeInSquare - 1 << "] которую хотите помен€ть местами с клеткой 0: ";
 		std::cin >> cellToChange;
 		if (std::cin.fail() || cellToChange > (sizeInSquare - 1))
 		{
@@ -155,26 +166,25 @@ void changeCells(int size)
 			std::cin.ignore();
 		}
 	}
-	
+
 	FieldCell cellToCheck = gameField[getCellIndex(cellToChange)];
 	if (!isMoveAvaiable(cellToCheck))
 	{
 		cellToChange = -1;
 		system("cls");
 		std::cout << "’од недоступен, смените клетку.\n";
+		updateFieldCellsStatuses(size);
 	}
 	else
 	{
-		int zeroIndex = getCellIndex(0), cellIndex = getCellIndex(cellToChange);;
-		if ((gameField[cellIndex].get_x() == size) && (gameField[cellIndex].get_x() == 1))
-			std::cout << "’од недоступен, смените клетку.\n";
-		else 
-		{
-			FieldCell tempCell = gameField[cellIndex];
-			gameField[cellIndex] = gameField[zeroIndex];
-			gameField[zeroIndex] = tempCell;
-			system("cls");
-		}
+		int zeroIndex = getCellIndex(0), cellIndex = getCellIndex(cellToChange);
+		std::swap(gameField[zeroIndex], gameField[cellIndex]);
+
+		gameField[cellIndex].set_position(cellIndex / size + 1, cellIndex % size + 1);
+		gameField[zeroIndex].set_position(zeroIndex / size + 1, zeroIndex % size + 1);
+
+		system("cls");
+		updateFieldCellsStatuses(size);
 	}
 }
 
