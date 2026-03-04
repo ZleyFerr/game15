@@ -77,7 +77,7 @@ void updateFieldCellsStatuses(int size)
 			gameField[i].set_isCellEmpty(1);
 		}
 
-		if (i != (sizeInSquare - 1)) // âïðàâî
+		if (i != (sizeInSquare - 1)) // Ð²Ð¿Ñ€Ð°Ð²Ð¾
 		{
 			if (i + 1 == zeroIndex)
 			{
@@ -92,7 +92,7 @@ void updateFieldCellsStatuses(int size)
 		}
 
 
-		if (i != 0) // âëåâî
+		if (i != 0) // Ð²Ð»ÐµÐ²Ð¾
 		{
 			if (gameField[i - 1].get_isCellEmpty())
 			{
@@ -106,7 +106,7 @@ void updateFieldCellsStatuses(int size)
 				gameField[i].set_isLeftAvaible(0);
 		}
 
-		if (i-size >= 0) //âåðõ
+		if (i-size >= 0) //Ð²ÐµÑ€Ñ…
 		{
 			if(gameField[i-size].get_isCellEmpty())
 				gameField[i].set_isUpAvaible(1);
@@ -114,7 +114,7 @@ void updateFieldCellsStatuses(int size)
 				gameField[i].set_isUpAvaible(0);
 		}
 
-		if (i+size < sizeInSquare) //âíèç
+		if (i+size < sizeInSquare) //Ð²Ð½Ð¸Ð·
 		{
 			if (gameField[i + size].get_isCellEmpty())
 				gameField[i].set_isDownAvaible(1);
@@ -158,7 +158,7 @@ void changeCells(int size)
 
 	while (cellToChange < 1 || cellToChange >(sizeInSquare - 1))
 	{
-		std::cout << "Ââåäèòå êëåòêó [1-" << sizeInSquare - 1 << "] êîòîðóþ õîòèòå ïîìåíÿòü ìåñòàìè ñ êëåòêîé 0: ";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ»ÐµÑ‚ÐºÑƒ [1-" << sizeInSquare - 1 << "] ÐºÐ¾Ñ‚Ð¾Ñ€ÑƒÑŽ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ð¾Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð¼ÐµÑÑ‚Ð°Ð¼Ð¸ Ñ ÐºÐ»ÐµÑ‚ÐºÐ¾Ð¹ 0: ";
 		std::cin >> cellToChange;
 		if (std::cin.fail() || cellToChange > (sizeInSquare - 1))
 		{
@@ -172,7 +172,7 @@ void changeCells(int size)
 	{
 		cellToChange = -1;
 		system("cls");
-		std::cout << "Õîä íåäîñòóïåí, ñìåíèòå êëåòêó.\n";
+		std::cout << "Ð¥Ð¾Ð´ Ð½ÐµÐ´Ð¾ÑÑ‚ÑƒÐ¿ÐµÐ½, ÑÐ¼ÐµÐ½Ð¸Ñ‚Ðµ ÐºÐ»ÐµÑ‚ÐºÑƒ.\n";
 		updateFieldCellsStatuses(size);
 	}
 	else
