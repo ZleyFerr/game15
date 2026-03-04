@@ -25,6 +25,6 @@ void playGame()
 	if (checkWin)
 	{
 		renderGame();
-		std::cout << "Ïîáåäà!\n";
+		std::cout << "ÐŸÐ¾Ð±ÐµÐ´Ð°!\n";
 	}
 }
