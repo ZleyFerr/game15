@@ -16,6 +16,11 @@ unsigned short int Position::get_y() const
 	return y;
 }
 
+void Position::position_printer_method()
+{
+	std::cout << "position\n";
+}
+
 Position::Position(unsigned short int x, unsigned short int y)
 {
 	this->x = x;
