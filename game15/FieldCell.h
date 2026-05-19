@@ -28,4 +28,6 @@ public:
 	void set_isRightAvaible(bool status);
 	void set_value(unsigned short int value);
 	void updateCellStatus(bool right, bool left, bool up, bool down, bool empty);
+
+	void position_printer_method() override;
 };
