@@ -12,6 +12,7 @@ public:
 	void set_position(unsigned short int x, unsigned short int y);
 	unsigned short int get_x() const;
 	unsigned short int get_y() const;
+	virtual void position_printer_method();
 	Position(unsigned short int x, unsigned short int y);
 	Position() {};
 };
