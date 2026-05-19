@@ -68,3 +68,8 @@ void FieldCell::updateCellStatus(bool right, bool left, bool up, bool down, bool
 	isDownAvaible = down;
 	isCellEmpty = empty;
 }
+
+void FieldCell::position_printer_method()
+{
+	std::cout << "position 2\n";
+}
