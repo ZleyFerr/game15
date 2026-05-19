@@ -25,6 +25,6 @@ void playGame()
 	if (checkWin)
 	{
 		renderGame();
-		std::cout << "Победа!\n";
+		std::cout << "Win!\n";
 	}
 }
